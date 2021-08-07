@@ -3,8 +3,6 @@ package com.example.abcshop.rest;
 import com.example.abcshop.entity.Product;
 import com.example.abcshop.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -42,12 +40,6 @@ public class ProductRestController {
     public Product updateProduct(@RequestBody Product theProduct) {
         productService.saveProduct(theProduct);
         return theProduct;
-    }
-
-    @PutMapping("/buy")
-    public ResponseEntity<Product> buy(@RequestBody Product theProduct) {
-        Product theProducts = productService.buy(theProduct.getId(),theProduct);
-        return new ResponseEntity<>(theProducts, HttpStatus.OK);
     }
 
     @DeleteMapping("/products/{productId}")

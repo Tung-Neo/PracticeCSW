@@ -42,10 +42,4 @@ public class ProductServiceImpl implements ProductService {
 		productRepository.deleteById(theId);
 	}
 
-//    @Override
-//    public Product buy(int id, Product theProduct) {
-//        Product theProducts = ProductRepository.findById(id).get();
-//        theProducts.setQuantity(theProducts.getQuantity() - theProduct.getQuantity());
-//        return ProductRepository.save(theProducts);
-//    }
 }
